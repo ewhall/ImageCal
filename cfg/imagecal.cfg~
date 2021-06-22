@@ -1,0 +1,24 @@
+ProcessDriver: {
+  Verbosity: 2
+  EnableFilter: false
+  RandomAccess: false
+  ProcessType: ["ImageCal"]
+  ProcessName: ["ImageCal"]
+  AnaFile:     "ana.root"
+  IOManager: {
+    Verbosity:     2
+    Name:         "IOManager"
+    IOMode:        0   # 0:Read-only, 1: Write-only, 2: Read-Write
+    OutFileName:   "outImageCal.root"
+    InputFiles:    []
+    InputDirs:     []
+    StoreOnlyType: []
+    StoreOnlyName: []
+  }
+  ProcessList : {
+    ImageCal: {
+      Image2DProducer: "wire"
+      ParPixelProducer: "test_img"
+    }
+  }
+}
